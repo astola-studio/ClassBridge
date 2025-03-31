@@ -27,7 +27,7 @@ Download the latest JAR from **[GitHub Releases](https://github.com/astola-studi
 
 ```gradle
 dependencies {
-    implementation fileTree(dir: 'lib', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 ```
 
