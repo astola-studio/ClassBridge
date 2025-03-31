@@ -176,6 +176,11 @@ Used to identify that a method is a field (set/get) method when calling through 
 
 ---
 
+### Code Examples
+There are some code examples you can find [Here](src/test/).
+
+---
+
 ## Supported Platforms
 
 | Platform | Minimum Version |
