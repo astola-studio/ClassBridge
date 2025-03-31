@@ -141,7 +141,7 @@ Specifies the fully qualified name of the real class that should be proxied.
 public interface HiddenAPI {}
 ```
 
-If you are lazy like me, the following corresponds to `android.app.Application` :
+Or If you are lazy like me, the following corresponds to `android.app.Application` :
 
 ```java
 @ClassName("android.app.")
