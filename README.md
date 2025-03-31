@@ -17,7 +17,7 @@ ClassBridge is a **dynamic proxy library** for Java and Android. It enables seam
 
 ## Installation
 
-### Download
+### **Download**
 
 Download the latest JAR from **[GitHub Releases](https://github.com/astola-studio/ClassBridge/releases)**
 
