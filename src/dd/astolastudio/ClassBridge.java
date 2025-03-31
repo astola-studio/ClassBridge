@@ -150,7 +150,7 @@ public class ClassBridge
 
 	public class DynamicInvocationHandler implements InvocationHandler
 	{
-		final Object targetInstance; 
+		final Object targetInstance;
 		final Class<?> realClass; 
 
 		public DynamicInvocationHandler(Object targetInstance, Class<?> realClass)

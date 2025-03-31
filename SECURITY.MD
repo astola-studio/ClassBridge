@@ -21,3 +21,4 @@ Alternatively to using GitHub, or if you have a security question, please email 
 ## Fixing Vulnerabilities
 
 We take all vulnerability reports seriously and strive to fix them as quickly as possible. Once we receive a report, we will verify the vulnerability and its impact. We will then work to develop and test a fix for the vulnerability, and release it as soon as possible.
+
