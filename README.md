@@ -17,13 +17,17 @@ ClassBridge is a **dynamic proxy library** for Java and Android. It enables seam
 
 ## Installation
 
+### Download
+
+Download the latest JAR from **[GitHub Releases](https://github.com/astola-studio/ClassBridge/releases)**
+
 ### **Java Project**
 
-Download the latest JAR from **[GitHub Releases](https://github.com/astola-studio/ClassBridge/releases)** and add it to your classpath.
+Add it to your classpath.
 
 ### **Android Project**
 
-Download the latest JAR from **[GitHub Releases](https://github.com/astola-studio/ClassBridge/releases)** and add it to `libs` folder and make sure your `build.gradle` has:
+Add it to `libs` folder and make sure your `build.gradle` has:
 
 ```gradle
 dependencies {
