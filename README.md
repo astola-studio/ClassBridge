@@ -68,6 +68,13 @@ MyInterface proxy = bridge.Static(MyInterface.class);
 proxy.doSomething();
 ```
 
+Or non constant approach  (dynamic):
+
+```java
+MyInterface proxy = bridge.Static("com.package.Test", MyInterface.class);
+proxy.doSomething();
+```
+
 ### **3. Instantiating an Object Dynamically**
 
 ```java
@@ -91,6 +98,12 @@ public interface MyInterface {
 }
 
 MyInterface instance = bridge.New(MyInterface.class, new Object[]{"param"});
+instance.run();
+```
+
+Or non constant approach  (dynamic):
+
+```javaMyInterface instance = bridge.New("com.package.Test", MyInterface.class, new Object[]{"param"});
 instance.run();
 ```
 
@@ -181,7 +194,7 @@ Used to identify that a method is a field (set/get) method when calling through 
 ---
 
 ## Code Examples
-There are some code examples you can find [Here](src/test/).
+There are some code examples you can find [Here](src/test/). There are many usecases, but i am too lazy to write them all in here. It wouldn't even be fun, if i tell you everything. You'll love it more, if you try it yourself. You'll learn more, find more.
 
 ---
 
