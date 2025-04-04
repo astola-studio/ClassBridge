@@ -34,22 +34,42 @@ public class ClassBridge
 
 	public <T> T Static(Class<T> cls) throws Exception
 	{
-		return createProxy(cls, null, null); 
+		return Static(null, cls); 
 	}
 
+	public <T> T Static(String cls, Class<T> proxy) throws Exception
+	{
+		return Static(cls, null, proxy); 
+	}
+	
+	public <T> T Static(String cls, Object inst, Class<T> proxy) throws Exception
+	{
+		return New(cls, null, proxy);
+	}
+
+	public <T> T New(String cls, Class<T> proxy, Object[] args) throws Exception
+	{
+		return createProxy(cls, null, proxy, args);
+	}
+
+	public <T> T New(String cls, Object inst, Class<T> proxy) throws Exception
+	{
+		return createProxy(cls, proxy, inst, null);
+	}
+	
 	public <T> T New(Class<T> cls, Object[] args) throws Exception
 	{
-		return createProxy(cls, null, args); 
+		return New(null, cls, args);
 	}
 
 	public <T> T New(Object instance, Class<T> cls) throws Exception
 	{
-		return createProxy(cls, instance, null); 
+		return New(null, instance, cls);
 	}
 
-	<T> T createProxy(Class<T> cls, Object instance, Object[] args) throws Exception
+	<T> T createProxy(String cls, Class<T> proxy, Object instance, Object[] args) throws Exception
 	{
-		Class<?> realClass = getRealClass(cls); 
+		Class<?> realClass = getRealClass(proxy, cls==null?null:new Annotation[]{new ClassNameProxy(cls)}); 
 		if (realClass == null)
 			throw new IllegalStateException("@ClassName(\"...\") annotation missing."); 
 
@@ -63,8 +83,8 @@ public class ClassBridge
 		}
 		
 		return (T) Proxy.newProxyInstance(
-			cls.getClassLoader(),
-			new Class[]{cls},
+			proxy.getClassLoader(),
+			new Class[]{proxy},
 			new DynamicInvocationHandler(instance, realClass)
 		); 
 	}
@@ -288,4 +308,28 @@ public class ClassBridge
 		return args; 
 	}
 
+	
+	private static class ClassNameProxy implements ClassName
+	{
+		String value;
+
+		private ClassNameProxy(String value)
+		{
+			this.value = value;
+		}
+
+		@Override
+		public String value()
+		{
+			return value;
+		}
+
+		@Override
+		public Class<? extends Annotation> annotationType()
+		{
+			return ClassName.class;
+		}
+		
+
+	}
 }
