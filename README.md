@@ -103,7 +103,8 @@ instance.run();
 
 Or non constant approach  (dynamic):
 
-```javaMyInterface instance = bridge.New("com.package.Test", MyInterface.class, new Object[]{"param"});
+```java
+MyInterface instance = bridge.New("com.package.Test", MyInterface.class, new Object[]{"param"});
 instance.run();
 ```
 
